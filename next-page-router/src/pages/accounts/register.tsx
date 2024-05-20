@@ -1,7 +1,5 @@
 
-import { useState } from "react";
 import * as Yup from "yup";
-import { redirect } from "next/navigation";
 import Link from 'next/link';
 
 
@@ -152,7 +150,7 @@ export default function Register() {
       </FormContainer>
       {/* <Marginer direction="vertical" margin={5} /> */}
         Already have an account?
-        <Link href="" >
+        <Link href="/accounts/login" >
           sign in
         </Link>
     </BoxContainer>

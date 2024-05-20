@@ -1,23 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 
 const Header = () => {
-  const Navigate = useNavigate();
+  const router = useRouter()
 
 
   async function LogOut() {
     localStorage.removeItem("token");
     alert("You have been logged out")
     // console.log(localStorage.getItem("token"));
-    Navigate('/')
+    router.push('/Link ccounts/login')
   }
   return (
     <nav >
       <ul className="list-none">
-        <li><a href="/dashboard">Home</a></li>
-        <li><a href="/search">Search Pokemon</a></li>
-        <li><a href="/favorite">My Favorite Pokemon</a></li>
-        <li><a href="/allPokemon">Pokemon List</a></li>
+        <li><Link href="/dashboard/home">Home</Link ></li>
+        <li><Link href="/pokemon/search">Search Pokemon</Link ></li>
+        <li><Link href="/pokemon/favorite">My Favorite Pokemon</Link ></li>
+        <li><Link href="/pokemon/pokemonlist">Pokemon List</Link ></li>
         <button className="absolute right-0 h-16 w-16" onClick={LogOut}>Log Out</button>
       </ul>
       

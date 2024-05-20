@@ -1,5 +1,6 @@
 import Axios from "axios";
 import { useState } from "react"
+import Header from "../dashboard/Header";
 // import Header from "./Dashboard/Header";
 
 export default function SearchPage() {
@@ -120,6 +121,7 @@ export default function SearchPage() {
 
   return (
     <>
+     <Header/>
       <br />
       <div>
         <h2>What pokemon do you want to see today?</h2>

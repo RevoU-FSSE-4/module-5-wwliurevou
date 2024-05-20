@@ -1,7 +1,7 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 
-import { redirect } from "next/navigation";
 import { Mid, Style } from "@/styles/Style";
 
 
@@ -23,6 +23,7 @@ export default function Login() {
   const [password, setPassword] = useState<string>("");
 
 
+  const router = useRouter()
 
   async function onSubmit(e: any) {
     e.preventDefault()
@@ -56,7 +57,7 @@ export default function Login() {
 
       setTimeout(() => {
         alert("Login is successful");
-        redirect("/dashboard");
+        router.push("/dashboard/home")
       }, 1000);
     } catch (error) {
       alert("Incorrect Email or Password");
