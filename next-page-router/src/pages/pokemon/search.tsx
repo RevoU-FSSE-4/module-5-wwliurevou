@@ -1,6 +1,6 @@
 import Axios from "axios";
 import { useState } from "react"
-import Header from "../dashboard/Header";
+import Header from "../../dashboard/Header";
 // import Header from "./Dashboard/Header";
 
 export default function SearchPage() {

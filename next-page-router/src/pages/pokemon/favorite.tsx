@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "../dashboard/Header";
+import Header from "../../dashboard/Header";
 
 export default function FavoritePokemon() {
   const [catResponse, setCatResponse] = useState<Category[]>([]);

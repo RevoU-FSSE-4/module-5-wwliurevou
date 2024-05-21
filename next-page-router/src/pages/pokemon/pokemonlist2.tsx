@@ -1,27 +1,19 @@
 import Header from "@/dashboard/Header";
 import Link from "next/link";
-import { useState } from "react";
 
-export default function pokemonlist2({ pokemons,prev,next }) {
+export default function pokemonlist2({ pokemons }) {
     const { results } = pokemons;
-    const [nextUrl,setNextUrl]=useState<"string">();
-const [prevUrl,setPrevUrl]=useState<"string">();
     return (
 <>
-
 <Header/>
 {results.map((result) => (
           <div className="group rounded-lg border border-transparent m-3 px-5 py-4 transition-colors dark:border-gray-500 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           key={result.name}>
              <a href={"pokemon/" + result.name}>
-             <h2 className={`text-1xl font-semibold`}>{result.name} &rarr;</h2>
+              <h2>{result.name} &rarr;</h2>
             </a>
           </div>
-
-
-          
         ))}
-
 
 
 {/* 
@@ -42,15 +34,11 @@ const [prevUrl,setPrevUrl]=useState<"string">();
   export async function getStaticProps() {
     const res = await fetch("https://pokeapi.co/api/v2/pokemon");
     const pokemons = await res.json();
-    const next = pokemons.next;
-    const prev = pokemons.previous;
+
 
     return {
         props: {
-          pokemons,
-          next,
-          prev,
-
+          pokemons
         },
 
         
@@ -217,69 +205,3 @@ const [prevUrl,setPrevUrl]=useState<"string">();
 // }
 
 // export default listPokemon;
-
-// import React from "react";
-// import axios from "axios";
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import Pokeinfo from "./PokeInfo";
-// import Header from "../../dashboard/Header";
-// import Card from "./Card";
-
-// const PokemonList=()=>{
-//     const [pokeData,setPokeData]=useState([]);
-//     const [loading,setLoading]=useState(true);
-//     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/")
-//     const [nextUrl,setNextUrl]=useState<"string">();
-//     const [prevUrl,setPrevUrl]=useState<"string">();
-//     const [pokeDex,setPokeDex]=useState<"string">();
-
-//     const pokeFun=async()=>{
-//         setLoading(true)
-//         const res=await axios.get(url);
-//         setNextUrl(res.data.next);
-//         setPrevUrl(res.data.previous);
-//         getPokemon(res.data.results)
-//         setLoading(false)
-//     }
-//     const getPokemon=async(res)=>{
-//        res.map(async(item)=>{
-//           const result=await axios.get(item.url)
-//           setPokeData(state=>{
-//               state=[...state,result.data]
-//               state.sort((a,b)=>a.id>b.id?1:-1)
-//               return state;
-//           })
-//        })   
-//     }
-//     useEffect(()=>{
-//         pokeFun();
-//     },[url])
-//     return(
-//         <>
-//         <Header/>
-//             <div className="container">
-//                 <div className="left-content">
-//                     <Card pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
-                    
-//                     <div className="btn-group">
-//                         {  prevUrl && <button onClick={()=>{
-//                             setPokeData([])
-//                            setUrl(prevUrl) 
-//                         }}>Previous</button>}
-
-//                         { nextUrl && <button onClick={()=>{
-//                             setPokeData([])
-//                             setUrl(nextUrl)
-//                         }}>Next</button>}
-
-//                     </div>
-//                 </div>
-//                 <div className="right-content">
-//                    <Pokeinfo data={pokeDex}/>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
-// export default PokemonList;
