@@ -17,7 +17,7 @@ export default function pokemon({ pokemon }) {
           <p>Height: {pokemon.height}</p>
           <p>Weight: {pokemon.weight}</p>
         </div>
-        <Link href="/pokemon/pokemonlist2" >
+        <Link href="/pokemon/pokemonlist" >
           back
         </Link>
     </>
