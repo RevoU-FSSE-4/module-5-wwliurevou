@@ -1,6 +1,7 @@
 import Header from "@/dashboard/Header";
 import Link from "next/link";
 import { useState } from "react";
+import pokemon from "./pokemon/[id]";
 
 export default function pokemonlist2({ pokemons,prev,next }) {
     const { results } = pokemons;
@@ -15,6 +16,8 @@ const [prevUrl,setPrevUrl]=useState<"string">();
           key={result.name}>
              <a href={"pokemon/" + result.name}>
              <h2 className={`text-1xl font-semibold`}>{result.name} &rarr;</h2>
+
+
             </a>
           </div>
 

@@ -87,11 +87,14 @@ export default function Login() {
           <input name="password" onChange={(e) => setPassword(e.target.value)} type="password" required autoComplete="on"/>
 
         </Mid>
+        <div class="inline-flex">
+        <button type="submit"className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full grid grid-cols-1 justify-items-center"> Login </button>
+        <br/>
+      </div>
+        <p className="form__hint, text-lg">Don't have an account? <a className="form__link" href="/">Register Here</a></p>
 
-        <p className="form__hint, text-lg">Don't have an account? <a className="form__link" href="/accounts/register">Register Here</a></p>
 
-
-        <button type="submit"> Login </button>
+        
 
       </form>
 

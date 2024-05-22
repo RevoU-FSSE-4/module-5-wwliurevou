@@ -2,32 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  padding: 1px
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-right: 0.1 rem;
+
+  overflow: hidden;
+
+}
+li {
+  float: left;
+  margin-right: 2rem;
+
+}
+li Link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #F7D346;
+  color: black;
+  justify-items: center;
+}
+.pokemonimage{
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  margin-right: 1rem;
+display: inline-block;
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  background-image:URL("https://wallpapercave.com/wp/RBpf6Dr.jpg") ;
+  background-repeat: no-repeat, repeat;
+  background-size: cover; /* Resize the background image to cover the entire container */
+ 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.pokemonSearch{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.pokemonName{
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;  
+  background-color: aliceblue;
+  
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}

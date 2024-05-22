@@ -123,17 +123,24 @@ export default function SearchPage() {
     <>
      <Header/>
       <br />
-      <div>
+      <div  className="pokemonSearch">
         <h2>What pokemon do you want to see today?</h2>
-        <input type="text" value={pokemonName} onChange={e => setPokemonName(e.target.value)} />
         <br />
-        <button onClick={searchPokemon}>Search</button>
+      
+
+        <div >
+        <input type="text" value={pokemonName} onChange={e => setPokemonName(e.target.value)} />
+
+        <button onClick={searchPokemon}className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full grid grid-cols-1 "> Search </button>
+
+        <br/>
+      </div>
       </div>
       <div className="pokemonName" id="pokemonName">{!pokemonChosen ? (<h1>{pokemonBio.name}</h1>) : (
         <>
           <div className="pokemonCard" id="pokemonCard">
             <h2>Name: {pokemonBio.name}</h2>
-            <img src={pokemonBio.img} />
+            <img className="pokemonimage" src={pokemonBio.img} />
             <h2>Species :{pokemonBio.species}</h2>
             <h3>Type: {pokemonBio.type}</h3>
             <h3>HP: {pokemonBio.hp}</h3>

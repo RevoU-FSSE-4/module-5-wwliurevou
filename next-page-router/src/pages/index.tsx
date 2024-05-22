@@ -148,9 +148,12 @@ export default function Register() {
         </FieldContainer>
 
         {/* <Marginer direction="vertical" margin="1em" /> */}
-        <SubmitButton type="submit" disabled={!formik.isValid}>
-          Signup
-        </SubmitButton>
+   
+
+        <div className="inline-flex">
+        <SubmitButton type="submit" disabled={!formik.isValid}className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full grid grid-cols-1 justify-items-center"> Register </SubmitButton>
+        <br/>
+      </div>
       </FormContainer>
       {/* <Marginer direction="vertical" margin={5} /> */}
         Already have an account?
