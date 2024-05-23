@@ -10,7 +10,7 @@ const Header = () => {
     localStorage.removeItem("token");
     alert("You have been logged out")
     // console.log(localStorage.getItem("token"));
-    router.push('/Link ccounts/login')
+    router.push('/accounts/login')
   }
   return (
     <nav>
